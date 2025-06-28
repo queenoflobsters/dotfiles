@@ -1,3 +1,6 @@
 # Ignore everything except .gitignore
 *
 !.gitignore
+
+# Files in home root
+!.zshrc
