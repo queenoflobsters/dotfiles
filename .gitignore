@@ -4,3 +4,8 @@
 
 # Files in home root
 !.zshrc
+
+
+
+# Files in config folder
+!.config/helix
