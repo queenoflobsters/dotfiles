@@ -12,6 +12,9 @@
 # ZSH Config
 !.zshrc
 
+# Clangd Formatting
+!.clang-format
+
 #                ╔═╗           ╔═╗    ╔╗   ╔╗       
 #                ║╔╝           ║╔╝    ║║   ║║       
 #   ╔══╗╔══╗╔═╗ ╔╝╚╗╔╗╔══╗    ╔╝╚╗╔══╗║║ ╔═╝║╔══╗╔═╗
@@ -28,3 +31,7 @@
 # Helix editor 
 !.config/helix
 !.config/helix/*
+
+# Clangd Compiler
+!.config/clangd
+!.config/clangd/*

@@ -1,0 +1,15 @@
+CompileFlags:
+  Add: [
+  # "-stdlib=libc++",
+  # "-Wl,-rpath,/usr/lib"
+  # "-fmodule-search-path"
+  # "-fmodules"
+   "-std=c++23",
+   "-Wall", "-Wextra"]
+  Compiler: clang++
+Diagnostics:
+  ClangTidy:
+    Add: [clang-diagnostic-*, concurrency-*, clang-analyzer-*, modernize-*, performance-*]
+    Remove: modernize-use-trailing-return-type
+
+
