@@ -1,0 +1,52 @@
+theme = "flexoki_dark"
+
+[editor]
+middle-click-paste = false
+line-number = "relative"
+mouse = true
+true-color = true
+idle-timeout = 0
+bufferline = "always"
+auto-completion = true
+indent-guides.render = true
+cursorline = true
+color-modes = true
+end-of-line-diagnostics = "hint"
+
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
+after-delay.timeout = 300
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode","spacer", "version-control", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["diagnostics", "register", "primary-selection-length", "selections",  "position", "file-encoding"]
+mode.normal = "normal"
+mode.insert = "insert"
+mode.select = "select"
+
+[editor.lsp]
+display-signature-help-docs = false
+display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+
+[keys.normal]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
+
