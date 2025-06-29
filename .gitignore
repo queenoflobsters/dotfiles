@@ -1,6 +1,7 @@
 # Ignore everything except .gitignore
 /*
 !.gitignore
+!.ignore
 
 # ╔╗                              ╔╗ 
 # ║║                             ╔╝╚╗
@@ -15,6 +16,10 @@
 # Clangd Formatting
 !.clang-format
 
+# Background Images
+!Wallpapers
+!Wallpapers/*
+
 #                ╔═╗           ╔═╗    ╔╗   ╔╗       
 #                ║╔╝           ║╔╝    ║║   ║║       
 #   ╔══╗╔══╗╔═╗ ╔╝╚╗╔╗╔══╗    ╔╝╚╗╔══╗║║ ╔═╝║╔══╗╔═╗
@@ -25,7 +30,7 @@
 #                     ╚══╝                          
 
 # gitignore config fuckery
-!.config/
+!.config
 .config/*
 
 # Helix editor 
