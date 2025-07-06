@@ -16,9 +16,6 @@
 # Clangd Formatting
 !.clang-format
 
-# Background Images
-!Wallpapers
-!Wallpapers/*
 
 # Extra stuff
 !extras
@@ -48,3 +45,7 @@
 # Ghostty Terminal
 !.config/ghostty
 !.config/ghostty/*
+
+# Hyprland Window Manager
+!.config/hypr
+!.config/hypr/*
