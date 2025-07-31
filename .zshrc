@@ -49,3 +49,4 @@ eval "$(zoxide init --cmd cd zsh)"
 # >>> xmake >>>
 test -f "$HOME/.xmake/profile" && source "$HOME/.xmake/profile"
 # <<< xmake <<<
+export PATH="/home/gaybe/.pixi/bin:$PATH"
