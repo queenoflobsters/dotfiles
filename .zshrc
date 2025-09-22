@@ -3,6 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="/usr/bin/hx"
 export HOST=$HOST
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 
 # Highlighters
