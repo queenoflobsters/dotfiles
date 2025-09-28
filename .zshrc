@@ -4,6 +4,7 @@ export EDITOR="/usr/bin/hx"
 export HOST=$HOST
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/home/gaybe/.pixi/bin:$PATH"
 
 
 # Highlighters
@@ -50,4 +51,3 @@ eval "$(zoxide init --cmd cd zsh)"
 # >>> xmake >>>
 test -f "$HOME/.xmake/profile" && source "$HOME/.xmake/profile"
 # <<< xmake <<<
-export PATH="/home/gaybe/.pixi/bin:$PATH"
