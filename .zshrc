@@ -51,3 +51,5 @@ eval "$(zoxide init --cmd cd zsh)"
 # >>> xmake >>>
 test -f "$HOME/.xmake/profile" && source "$HOME/.xmake/profile"
 # <<< xmake <<<
+
+[ -f "/home/gaybe/.ghcup/env" ] && . "/home/gaybe/.ghcup/env" # ghcup-env
