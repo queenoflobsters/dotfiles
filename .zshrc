@@ -8,7 +8,8 @@ export PATH="/home/gaybe/.pixi/bin:$PATH"
 
 
 # Highlighters
-ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(
+  main
   brackets
   pattern
   regexp
