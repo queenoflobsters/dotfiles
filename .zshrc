@@ -6,6 +6,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/gaybe/.pixi/bin:$PATH"
 
+# I shat my balls
 
 # Highlighters
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(
