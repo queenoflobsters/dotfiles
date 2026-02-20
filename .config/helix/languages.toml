@@ -8,6 +8,13 @@ roots = ["Project.toml", "Manifest.toml", ".git"]
 # type this to recreate lsp configuration :
 # mkdir -p ~/.julia/environments/helix-lsp
 # julia --project=~/.julia/environments/helix-lsp -e 'using Pkg; Pkg.add(["LanguageServer", "SymbolServer", "JuliaFormatter"])'
+# or this
+# julia --project=@helix-lsp -e '
+# using Pkg; 
+# Pkg.add(url="https://github.com/julia-vscode/LanguageServer.jl"); 
+# Pkg.add(url="https://github.com/julia-vscode/SymbolServer.jl");
+# Pkg.add("JuliaFormatter");
+# Pkg.precompile()'
 command = "julia"
 args = [
     "--startup-file=no",
@@ -15,4 +22,6 @@ args = [
     "--project=@helix-lsp", 
     "-e", 
     "using LanguageServer; runserver()"
+    # one liner for testing
+    # julia --startup-file=no --history-file=no --project=@helix-lsp -e 'using LanguageServer; runserver()'
 ]
