@@ -46,12 +46,23 @@ alias lsd="lsd -lAg"
 
 source $ZSH/oh-my-zsh.sh
 
-# keep at the end. If problem, this can be done with omz plugins
+### >>> opam >>>
 eval "$(opam env)"
+# <<< opam >>>
+
+# >>> zoxide >>>
 eval "$(zoxide init --cmd cd zsh)"
+# <<< zoxide <<<
 
 # >>> xmake >>>
 test -f "$HOME/.xmake/profile" && source "$HOME/.xmake/profile"
 # <<< xmake <<<
 
+# >>> ghcup-env >>>
 [ -f "/home/gaybe/.ghcup/env" ] && . "/home/gaybe/.ghcup/env" # ghcup-env
+# <<< ghcup-env <<<
+
+# >>> juliaup initialize >>>
+path=('/home/gaybe/.juliaup/bin' $path)
+export PATH
+# <<< juliaup initialize <<<
