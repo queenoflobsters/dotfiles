@@ -5,7 +5,6 @@ export HOST=$HOST
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/gaybe/.pixi/bin:$PATH"
-export JULIA_PKG_SERVER="" # Necessary for Julia because in with dnf... idk...
 
 # I shat my balls
 
@@ -63,4 +62,7 @@ test -f "$HOME/.xmake/profile" && source "$HOME/.xmake/profile"
 [ -f "/home/gaybe/.ghcup/env" ] && . "/home/gaybe/.ghcup/env" # ghcup-env
 # <<< ghcup-env <<<
 
-
+# >>> juliaup initialize >>>
+path=('/home/gaybe/.juliaup/bin' $path)
+export PATH
+# <<< juliaup initialize <<<

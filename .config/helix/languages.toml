@@ -5,6 +5,9 @@ language-servers = [ "julia-lsp" ]
 roots = ["Project.toml", "Manifest.toml", ".git"]
 
 [language-server.julia-lsp]
+# type this to recreate lsp configuration :
+# mkdir -p ~/.julia/environments/helix-lsp
+# julia --project=~/.julia/environments/helix-lsp -e 'using Pkg; Pkg.add(["LanguageServer", "SymbolServer", "JuliaFormatter"])'
 command = "julia"
 args = [
     "--startup-file=no",
