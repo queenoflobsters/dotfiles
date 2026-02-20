@@ -5,7 +5,7 @@ export HOST=$HOST
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/gaybe/.pixi/bin:$PATH"
-export JULIA_PKG_SERVER="" # Necessary for Julia to stop downloading shit idk
+export JULIA_PKG_SERVER="" # Necessary for Julia because in with dnf... idk...
 
 # I shat my balls
 
