@@ -1,27 +1,24 @@
 [[language]]
 name = "julia"
-# Use the built-in JuliaFormatter via the LSP # ?????
 language-servers = [ "julia-lsp" ]
 roots = ["Project.toml", "Manifest.toml", ".git"]
 
 [language-server.julia-lsp]
-# type this to recreate lsp configuration :
+### IF NORMAL PKG LSP IS WORKING
 # mkdir -p ~/.julia/environments/helix-lsp
 # julia --project=~/.julia/environments/helix-lsp -e 'using Pkg; Pkg.add(["LanguageServer", "SymbolServer", "JuliaFormatter"])'
-# or this
-# julia --project=@helix-lsp -e '
-# using Pkg; 
-# Pkg.add(url="https://github.com/julia-vscode/LanguageServer.jl"); 
-# Pkg.add(url="https://github.com/julia-vscode/SymbolServer.jl");
-# Pkg.add("JuliaFormatter");
-# Pkg.precompile()'
+
+### IF YOU NEED TO PULL FROM GITHUB
+# mkdir -p ~/.julia/environments/helix-lsp
+# julia --project=@helix-lsp -e 'using Pkg; Pkg.add(url="https://github.com/julia-vscode/LanguageServer.jl"); Pkg.add(url="https://github.com/julia-vscode/SymbolServer.jl"); Pkg.add("JuliaFormatter"); Pkg.precompile()'
+
 command = "julia"
 args = [
     "--startup-file=no",
     "--history-file=no",
     "--project=@helix-lsp", 
-    "-e", 
-    "using LanguageServer; runserver()"
+    "--sysimage", "/home/gaybe/.julia/environments/helix-lsp/JuliaLSP.so", # WHEN DOING SYSIMAGE ONLY
+    "-e", "using LanguageServer; runserver()"
     # one liner for testing
     # julia --startup-file=no --history-file=no --project=@helix-lsp -e 'using LanguageServer; runserver()'
 ]

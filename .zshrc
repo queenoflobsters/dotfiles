@@ -5,6 +5,7 @@ export HOST=$HOST
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/gaybe/.pixi/bin:$PATH"
+export JULIA_CPU_TARGET="generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)"
 
 # I shat my balls
 
