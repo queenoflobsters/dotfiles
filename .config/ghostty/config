@@ -1,3 +1,5 @@
 # My Ghostty config file
 
 theme = Flexoki Dark
+
+confirm-close-surface = false
