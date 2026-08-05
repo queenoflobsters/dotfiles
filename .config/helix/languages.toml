@@ -22,3 +22,19 @@ args = [
     # one liner for testing
     # julia --startup-file=no --history-file=no --project=@helix-lsp -e 'using LanguageServer; runserver()'
 ]
+
+# Configure Emmet for HTML/CSS snippet completion
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+# Configure CSS language settings
+[[language]]
+name = "css"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "css"] }
+language-servers = [
+  "vscode-css-language-server",
+  "tailwindcss-react",
+  "emmet-lsp"
+]
