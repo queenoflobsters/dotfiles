@@ -19,16 +19,13 @@ args = [
     "--project=@helix-lsp", 
     "--sysimage", "/home/gaybe/.julia/environments/helix-lsp/JuliaLSP.so", # WHEN DOING SYSIMAGE ONLY
     "-e", "using LanguageServer; runserver()"
-    # one liner for testing
     # julia --startup-file=no --history-file=no --project=@helix-lsp -e 'using LanguageServer; runserver()'
 ]
 
-# Configure Emmet for HTML/CSS snippet completion
 [language-server.emmet-lsp]
 command = "emmet-language-server"
 args = ["--stdio"]
 
-# Configure CSS language settings
 [[language]]
 name = "css"
 auto-format = true
@@ -38,3 +35,6 @@ language-servers = [
   "tailwindcss-react",
   "emmet-lsp"
 ]
+# HOW TO INSTALL THE LSP :
+# sudo npm install -g vscode-langservers-extracted
+# sudo npm install -g prettier @tailwindcss/language-server @olrtg/emmet-language-server
