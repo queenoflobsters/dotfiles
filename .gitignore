@@ -49,3 +49,7 @@
 # Hyprland Window Manager
 !.config/hypr
 !.config/hypr/*
+
+# Remove nwg-displays auto generated config
+.config/hypr/monitors.conf
+.config/hypr/monitors.lua
