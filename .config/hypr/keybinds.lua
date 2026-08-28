@@ -1,16 +1,18 @@
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 function get_workspace(i)
     local ws = hl.get_active_workspace()
-    if ws.monitor.id == 0 then
-      return i
-    else
-      if i <= 5 then
-        return i+5
-      else
-        return i-5
-      end
-    end
+    return i
+    -- if ws.monitor.id == 0 then
+    --   return i
+    -- else
+    --   if i <= 5 then
+    --     return i+5
+    --   else
+    --     return i-5
+    --   end
+    -- end
   end
+
 -- Start applications
 hl.bind(MainMod .. " + Return", hl.dsp.exec_cmd(Terminal))
 hl.bind(MainMod .. " + Q", hl.dsp.exec_cmd(Browser))
@@ -20,6 +22,7 @@ hl.bind(MainMod .. " + E", hl.dsp.exec_cmd(FileManager))
 hl.bind(MainMod .. " + Z", hl.dsp.exec_cmd(Ipc .. "panel-toggle wallpaper"))
 hl.bind(MainMod .. " + V", hl.dsp.exec_cmd(Ipc .. "panel-toggle clipboard"))
 hl.bind(MainMod .. " + X", hl.dsp.exec_cmd(Ipc .. "panel-toggle control-center"))
+hl.bind(MainMod .. " + N", hl.dsp.exec_cmd(Ipc .. "panel-toggle control-center notifications"))
 hl.bind(MainMod .. " + Space", hl.dsp.exec_cmd(Ipc .. "panel-toggle launcher"))
 
 -- Kill the process owning the window with a SIGKILL
@@ -80,15 +83,6 @@ hl.bind(MainMod .. " + M", hl.dsp.workspace.toggle_special("Music"))
 hl.bind(MainMod .. " + G", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 -- Fullscreen - Window takes up the entire screen.
 hl.bind(MainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
-
--- Screenshot a monitor
-hl.bind("PRINT", hl.dsp.exec_cmd(Ipc .. "screenshot-fullscreen pick"))
--- Screenshot a region
-hl.bind(MainMod .. " +  ", hl.dsp.exec_cmd(Ipc .. "screenshot-region"))
-
--- Example special workspace (scratchpad)
-hl.bind(MainMod .. "", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(MainMod .. "", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(MainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })

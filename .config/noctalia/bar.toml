@@ -56,7 +56,7 @@ visualization = "graph"
 
 [bar.default.dead_zone.actions]
 left = "panel-toggle control-center"
-middle = "exec ghostty"
+middle = "panel-toggle session"
 scroll_up = "volume-up"
 scroll_down = "volume-down"
 back = "media previous"
