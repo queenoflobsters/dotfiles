@@ -1,3 +1,4 @@
+#!/bin/sh
 git init
 git remote add origin https://www.github.com/queenoflobsters/dotfiles
 git fetch origin
