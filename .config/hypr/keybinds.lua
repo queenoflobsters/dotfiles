@@ -1,8 +1,16 @@
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 
 
--- Kill
+-- Start applications
 hl.bind(MainMod .. " + Return", hl.dsp.exec_cmd(Terminal))
+hl.bind(MainMod .. " + Q", hl.dsp.exec_cmd(Browser))
+hl.bind(MainMod .. " + E", hl.dsp.exec_cmd(FileManager))
+
+-- Toggle panels
+hl.bind(MainMod .. " + Z", hl.dsp.exec_cmd( Ipc .. "panel-toggle wallpaper"))
+hl.bind(MainMod .. " + V", hl.dsp.exec_cmd( Ipc .. "panel-toggle clipboard"))
+hl.bind(MainMod .. " + X", hl.dsp.exec_cmd( Ipc .. "panel-toggle control-center"))
+hl.bind(MainMod .. " + Space", hl.dsp.exec_cmd(Ipc .. "panel-toggle launcher"))
 
 -- Kill the process owning the window with a SIGKILL
 hl.bind(MainMod .. " + SHIFT + C", hl.dsp.window.kill())
@@ -10,10 +18,11 @@ hl.bind(MainMod .. " + SHIFT + C", hl.dsp.window.kill())
 -- Send a graceful request to close the window
 local closeWindowBind = hl.bind(MainMod .. " + C", hl.dsp.window.close())
 
+-- Toggle Gaps
+hl.bind(MainMod .. " + A", ToggleGaps)
+
 -- hl.bind(MainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(MainMod .. " + E", hl.dsp.exec_cmd(FileManager))
-hl.bind(MainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(MainMod .. " + Space", hl.dsp.exec_cmd(Ipc .. "panel-toggle launcher"))
+hl.bind(MainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(MainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(MainMod .. " + S", hl.dsp.layout("togglesplit"))    -- dwindle only
 

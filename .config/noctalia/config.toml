@@ -1,0 +1,7 @@
+[include]
+files = [
+  "./shell.toml",
+  "./bar.toml",
+  "./plugins.toml",
+  "./theme.toml"
+]

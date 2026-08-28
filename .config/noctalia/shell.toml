@@ -1,0 +1,5 @@
+[shell]
+# time_format = "{:%A :%H:%M}"
+settings_show_advanced = true
+screen_time_enabled   = true
+

@@ -12,7 +12,9 @@
 
 Terminal    = "ghostty"
 FileManager = "dolphin"
+Browser     = "librewolf"
 MainMod = "SUPER" -- Sets "Windows" key as main modifier
+
 -- noctalia ipc
 Ipc = "noctalia msg "
 
@@ -95,5 +97,5 @@ require("monitors")
 -- ░▀█▀░█▄█▒██▀░█▄▒▄█▒██▀
 -- ░▒█▒▒█▒█░█▄▄░█▒▀▒█░█▄▄
 
+-- For Noctalia Color templates
 require("noctalia").apply_theme()
-

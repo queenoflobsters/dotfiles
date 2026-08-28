@@ -1,0 +1,63 @@
+[bar]
+order = ["main"]
+
+
+[bar.default]
+radius = 0.0
+margin_ends = 0.0
+widget_spacing = 15
+
+start = [
+  "workspaces",
+  "spacer",
+  "notifications",
+  "clipboard",
+  "bluetooth",
+  "volume",
+  "brightness",
+  "battery",
+  "keyboard_layout",
+  "media",
+]
+
+center = [
+  "date",
+  "spacer",
+  "clock",
+]
+
+end    = [
+  "tray",
+  "cpu",
+  "temp",
+  "ram",
+  "network_tx",
+  "network_rx",
+  "power_profile",
+  "session"
+]
+
+[widget.spacer]
+length = 32
+
+[widget.cpu]
+visualization = "graph"
+
+[widget.network_tx]
+visualization = "graph"
+
+[widget.network_rx]
+visualization = "graph"
+
+
+[bar.default.dead_zone.actions]
+left = "panel-toggle control-center"
+middle = "exec ghostty"
+scroll_up = "volume-up"
+scroll_down = "volume-down"
+back = "media previous"
+forward = "media next"
+
+[bar.default.monitor.dp2]
+match = "DP-2"
+enabled = false

@@ -1,5 +1,5 @@
 # My Ghostty config file
 
-theme = noctalia
 
 confirm-close-surface = false
+theme = noctalia

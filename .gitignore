@@ -37,6 +37,7 @@
 # Helix editor 
 !.config/helix
 !.config/helix/*
+.config/helix/themes/noctalia.toml
 
 # Clangd Compiler
 !.config/clangd
@@ -45,10 +46,15 @@
 # Ghostty Terminal
 !.config/ghostty
 !.config/ghostty/*
+.config/ghostty/themes/noctalia
 
 # Hyprland Window Manager
 !.config/hypr
 !.config/hypr/*
+
+# Noctalia shell
+!.config/noctalia
+!.config/noctalia/*
 
 # Remove nwg-displays auto generated config
 .config/hypr/monitors.conf
