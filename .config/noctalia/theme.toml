@@ -1,7 +1,7 @@
 [wallpaper]
 enabled = true
 fill_mode = "crop"
-directory = "/home/gaybe/extras/wallpapers"
+directory = "/home/gaybe/extras/wallpapers/forest"
 transition = ["fade", "wipe", "disc", "stripes", "zoom", "honeycomb"]
 transition_on_startup = true
 

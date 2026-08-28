@@ -24,6 +24,7 @@ center = [
   "date",
   "spacer",
   "clock",
+  "lock_keys"
 ]
 
 end    = [
@@ -36,6 +37,9 @@ end    = [
   "power_profile",
   "session"
 ]
+
+[widget.lock_keys]
+hide_when_off = true
 
 [widget.spacer]
 length = 32
