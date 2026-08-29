@@ -2,14 +2,10 @@
 function get_workspace(i)
     local ws = hl.get_active_workspace()
     if ws.monitor.id == 0 then
-      if i >= 6 then
-        return "name:" .. string.char(64 + i - 5)
-      else
-        return i
-      end
+      return i
     else
       if i <= 5 then
-        return "name:" .. string.char(64 +i)
+        return i+5
       else
         return i-5
       end
