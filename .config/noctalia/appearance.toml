@@ -1,0 +1,47 @@
+[wallpaper]
+enabled = true
+fill_mode = "crop"
+directory = "/home/gaybe/extras/wallpapers/forest"
+transition = ["fade", "wipe", "disc", "stripes", "zoom", "honeycomb"]
+transition_on_startup = true
+
+[wallpaper.automation]
+enabled = true
+interval_seconds = 1200
+order = "random"
+recursive = true
+
+[wallpaper.default]
+path = "/home/gaybe/extras/wallpapers/forest/16.jpg"
+
+[wallpaper.monitor.DP-2]
+enabled = false
+fill_color = "#000000"
+
+
+[theme]
+mode = "dark"
+source = "builtin"
+builtin = "Kanagawa"
+wallpaper_scheme = "m3-content"
+
+[theme.templates]
+builtin_ids = [
+  "alacritty",
+  "btop",
+  "cava",
+  "gtk3",
+  "gtk4",
+  "ghostty",
+  "helix",
+  "hyprland",
+  "kcolorscheme",
+  "kitty",
+  "qt"
+]
+community_ids = [
+  "discord",
+  "libreoffice",
+  "yazi"
+]
+

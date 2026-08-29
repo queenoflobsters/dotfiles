@@ -1,16 +1,20 @@
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
-hl.workspace_rule({ workspace = "1", monitor = "DP-1", default = true})
-hl.workspace_rule({ workspace = "2", monitor = "DP-1"})
-hl.workspace_rule({ workspace = "3", monitor = "DP-1"})
-hl.workspace_rule({ workspace = "4", monitor = "DP-1"})
-hl.workspace_rule({ workspace = "5", monitor = "DP-1"})
-hl.workspace_rule({ workspace = "6", monitor = "DP-2", default = true})
-hl.workspace_rule({ workspace = "7", monitor = "DP-2"})
-hl.workspace_rule({ workspace = "8", monitor = "DP-2"})
-hl.workspace_rule({ workspace = "9", monitor = "DP-2"})
-hl.workspace_rule({ workspace = "10", monitor = "DP-2"})
+SPECIAL_GAPS_IN = 10
+SPECIAL_GAPS_OUT = 40
 
+hl.workspace_rule({ workspace = "1", persistent = true, monitor = "DP-1", default = true})
+hl.workspace_rule({ workspace = "2", persistent = true, monitor = "DP-1"})
+hl.workspace_rule({ workspace = "3", persistent = true, monitor = "DP-1"})
+hl.workspace_rule({ workspace = "4", persistent = true, monitor = "DP-1"})
+hl.workspace_rule({ workspace = "5", persistent = true, monitor = "DP-1"})
+hl.workspace_rule({ workspace = "name:E", persistent = true, monitor = "DP-2", default = true})
+hl.workspace_rule({ workspace = "name:D", persistent = true, monitor = "DP-2"})
+hl.workspace_rule({ workspace = "name:C", persistent = true, monitor = "DP-2"})
+hl.workspace_rule({ workspace = "name:B", persistent = true, monitor = "DP-2"})
+hl.workspace_rule({ workspace = "name:A", persistent = true, monitor = "DP-2"})
 
 -- Special
-hl.workspace_rule({workspace = "special:Music", gaps_in = 10, gaps_out = 40, on_created_empty = "flatpak run dev.aunetx.deezer"})
+hl.workspace_rule({workspace = "special:Music", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT, on_created_empty = "flatpak run dev.aunetx.deezer"})
+hl.workspace_rule({workspace = "special:Sysmon", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT, on_created_empty = "plasma-systemmonitor"})
+hl.workspace_rule({workspace = "special:Explorer", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT, on_created_empty = "dolphin"})

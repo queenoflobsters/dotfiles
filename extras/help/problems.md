@@ -10,3 +10,56 @@ systemctl --user mask imsettings-daemon.service
 systemctl --user reset-failed
 
 ```
+
+### Hyprland plugins
+```bash
+hyprpm update
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm add https://github.com/horriblename/hyprgrass
+hyprpm enable hyprbars hyprgrass
+```
+
+### ✖ Could not configure the hyprland source, cmake complained: 
+Packages needed :
+```
+aquamarine-devel glslang-devel hyprcursor-devel hyprutils-devel hyprgraphics-devel libinput-devel
+muParser-devel libeis-devel re2-devel hyprwayland-scanner-devel xcb-util-wm-devel xcb-util-errors-devel
+hyprwire-devel readline-devel tomlplusplus-devel meson glibmm2.4-devel
+```
+
+### BUILD LUA 5.5 (Obselete when Fedora 45 or switch to Arch)
+Build Lua5.5 : (God I hope it goes into the packages soon enough because this is painful)
+```bash
+# Build
+curl -R -O https://www.lua.org/ftp/lua-5.5.0.tar.gz
+tar -xf lua-5.5.0.tar.gz
+cd lua-5.5.0
+make linux
+sudo make install
+
+# Ensure the directory exists
+sudo mkdir -p /usr/local/lib/pkgconfig /usr/share/pkgconfig
+
+# Create the pkg-config definition
+# YOU NEED TO MANUALLY ADD -fPIC IN THE BUILD FLAGS INSIDE THE REPO (good luck)
+sudo tee /usr/share/pkgconfig/lua-5.5.pc > /dev/null << 'EOF'
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Lua
+Description: Lua language engine
+Version: 5.5.0
+Requires:
+Libs: -L${libdir} -llua -lm -ldl
+Cflags: -I${includedir}
+EOF
+
+# Create aliases for alternative naming formats CMake looks for
+sudo ln -sf /usr/share/pkgconfig/lua-5.5.pc /usr/share/pkgconfig/lua5.5.pc
+sudo ln -sf /usr/share/pkgconfig/lua-5.5.pc /usr/share/pkgconfig/lua55.pc
+
+```
+
+

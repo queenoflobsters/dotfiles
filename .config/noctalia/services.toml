@@ -1,0 +1,8 @@
+[audio]
+enable_overdrive = true
+
+[brightness]
+enable_ddcutil = true
+
+[idle]
+enabled = false

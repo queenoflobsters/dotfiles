@@ -24,7 +24,7 @@ center = [
   "date",
   "spacer",
   "clock",
-  "lock_keys"
+  "lock_keys",
 ]
 
 end    = [
@@ -37,6 +37,9 @@ end    = [
   "power_profile",
   "session"
 ]
+
+[widget.workspaces]
+label_source = "name"
 
 [widget.lock_keys]
 hide_when_off = true
@@ -53,10 +56,10 @@ visualization = "graph"
 [widget.network_rx]
 visualization = "graph"
 
-
 [bar.default.dead_zone.actions]
 left = "panel-toggle control-center"
-middle = "panel-toggle session"
+right = "panel-toggle session"
+middle = "settings-open"
 scroll_up = "volume-up"
 scroll_down = "volume-down"
 back = "media previous"

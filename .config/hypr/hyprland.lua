@@ -13,7 +13,9 @@
 Terminal    = "ghostty"
 FileManager = "dolphin"
 Browser     = "librewolf"
-MainMod = "SUPER" -- Sets "Windows" key as main modifier
+MainMod = "SUPER + " -- Sets "Windows" key as main modifier
+Shift = "SHIFT + "
+Ctrl = "CTRL + "
 
 -- noctalia ipc
 Ipc = "noctalia msg "
@@ -36,6 +38,7 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 
 
@@ -88,10 +91,15 @@ require("windows")
 
 
 -- ░█▄▒▄█░▄▀▄░█▄░█░█░▀█▀░▄▀▄▒█▀▄░▄▀▀
--- █▒▀▒█░▀▄▀░█▒▀█░█░▒█▒░▀▄▀░█▀▄▒▄██
+--  █▒▀▒█░▀▄▀░█▒▀█░█░▒█▒░▀▄▀░█▀▄▒▄██
 
 require("monitors")
 
+
+-- ▒█▀▄░█▒░░█▒█░▄▀▒░█░█▄░█░▄▀▀
+-- ░█▀▒▒█▄▄░▀▄█░▀▄█░█░█▒▀█▒▄██
+
+require("plugins")
 
 
 -- ░▀█▀░█▄█▒██▀░█▄▒▄█▒██▀

@@ -3,5 +3,8 @@ files = [
   "./shell.toml",
   "./bar.toml",
   "./plugins.toml",
-  "./theme.toml"
+  "./appearance.toml",
+  "./desktop_widgets.toml",
+  "./services.toml",
 ]
+
