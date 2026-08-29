@@ -56,6 +56,10 @@
 !.config/noctalia
 !.config/noctalia/*
 
+# XKB Layouts (for altgr-weur)
+!.config/xkb
+!.config/xkb/*
+
 # Remove nwg-displays auto generated config
 .config/hypr/monitors.conf
 .config/hypr/monitors.lua

@@ -1,6 +1,6 @@
 hl.config({
     input = {
-        kb_layout  = "us",
+        kb_layout  = "altgr-weur",
         kb_variant = "",
         kb_model   = "",
         kb_options = "",

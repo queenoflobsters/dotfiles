@@ -67,3 +67,6 @@ test -f "$HOME/.xmake/profile" && source "$HOME/.xmake/profile"
 path=('/home/gaybe/.juliaup/bin' $path)
 export PATH
 # <<< juliaup initialize <<<
+
+# opencode
+export PATH=/home/gaybe/.opencode/bin:$PATH
