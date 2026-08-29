@@ -1,16 +1,16 @@
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 function get_workspace(i)
-    local ws = hl.get_active_workspace()
-    if ws.monitor.id == 0 then
-      return i
+  local ws = hl.get_active_workspace()
+  if ws.monitor.id == 0 then
+    return i
+  else
+    if i <= 5 then
+      return i + 5
     else
-      if i <= 5 then
-        return i+5
-      else
-        return i-5
-      end
+      return i - 5
     end
   end
+end
 
 -- Start applications
 hl.bind(MainMod .. "Return", hl.dsp.exec_cmd(Terminal))
@@ -25,6 +25,7 @@ hl.bind(MainMod .. "N", hl.dsp.exec_cmd(Ipc .. "panel-toggle control-center noti
 hl.bind(MainMod .. "Space", hl.dsp.exec_cmd(Ipc .. "panel-toggle launcher"))
 hl.bind(MainMod .. Shift .. "T", hl.dsp.exec_cmd(Ipc .. "panel-toggle noctalia/timer:panel"))
 hl.bind(MainMod .. Shift .. "Z", hl.dsp.exec_cmd(Ipc .. "panel-toggle noctalia/wallpaper_depth:manager"))
+hl.bind(MainMod .. Shift .. "S", hl.plugin.hyprcapture.open)
 
 -- Hyprexpo
 hl.bind(MainMod .. "Tab", function() hl.plugin.hyprexpo.expo("toggle") end)
@@ -40,9 +41,10 @@ hl.bind(MainMod .. Shift .. "G", ToggleGaps)
 -- Toggle Window Bars IN PROGRESS... HOPEFULLY
 hl.bind(MainMod .. Ctrl .. "T", hl.dsp.window.tag({ tag = "has-bar" }))
 
-hl.bind(MainMod .. Shift .."Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(MainMod .. Shift .."F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(MainMod .. Shift .."P", hl.dsp.window.pseudo())
+hl.bind(MainMod .. Shift .. "Q",
+  hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(MainMod .. Shift .. "F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(MainMod .. Shift .. "P", hl.dsp.window.pseudo())
 hl.bind(MainMod .. "S", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Move focus with mainMod + arrow keys
@@ -57,9 +59,9 @@ hl.bind(MainMod .. Ctrl .. "H", hl.dsp.window.resize({ x = -resizeUnit, y = 0, r
 
   { repeating = true })
 hl.bind(MainMod .. Ctrl .. "J", hl.dsp.window.resize({ x = 0, y = resizeUnit, relative = true }), { repeating = true })
-hl.bind(MainMod .. Ctrl .."K", hl.dsp.window.resize({ x = 0, y = -resizeUnit, relative = true }),
+hl.bind(MainMod .. Ctrl .. "K", hl.dsp.window.resize({ x = 0, y = -resizeUnit, relative = true }),
   { repeating = true })
-hl.bind(MainMod .. Ctrl .."L", hl.dsp.window.resize({ x = resizeUnit, y = 0, relative = true }), { repeating = true })
+hl.bind(MainMod .. Ctrl .. "L", hl.dsp.window.resize({ x = resizeUnit, y = 0, relative = true }), { repeating = true })
 
 -- Move Windows
 hl.bind(MainMod .. Shift .. "H", hl.dsp.window.move({ direction = "left" }))
@@ -68,9 +70,9 @@ hl.bind(MainMod .. Shift .. "K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(MainMod .. Shift .. "L", hl.dsp.window.move({ direction = "right" }))
 
 
--- Workspaces manoeuoeveours 
+-- Workspaces manoeuoeveours
 for i = 1, 10 do
-  local key = i%10
+  local key = i % 10
   hl.bind(MainMod .. key, function()
     local w = get_workspace(i)
     hl.dispatch(hl.dsp.focus({ workspace = w }))
@@ -78,7 +80,7 @@ for i = 1, 10 do
   hl.bind(MainMod .. Shift .. key, function()
     local w = get_workspace(i)
     hl.dispatch(hl.dsp.window.move({ workspace = w, follow = true }))
-    end
+  end
   )
 end
 

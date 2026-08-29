@@ -16,7 +16,9 @@ systemctl --user reset-failed
 hyprpm update
 hyprpm add https://github.com/hyprwm/hyprland-plugins
 hyprpm add https://github.com/horriblename/hyprgrass
-hyprpm enable hyprbars hyprgrass
+hyprpm add https://github.com/sandwichfarm/hyprexpo
+hyprpm add https://github.com/gfhdhytghd/HyprCapture
+hyprpm enable hyprbars hyprgrass hyprexpo hyprcapture
 ```
 
 ### ✖ Could not configure the hyprland source, cmake complained: 
@@ -24,7 +26,8 @@ Packages needed :
 ```
 aquamarine-devel glslang-devel hyprcursor-devel hyprutils-devel hyprgraphics-devel libinput-devel
 muParser-devel libeis-devel re2-devel hyprwayland-scanner-devel xcb-util-wm-devel xcb-util-errors-devel
-hyprwire-devel readline-devel tomlplusplus-devel meson glibmm2.4-devel
+hyprwire-devel readline-devel tomlplusplus-devel meson glibmm2.4-devel qt6-qtsvg-devel layer-shell-qt-devel
+qt6-qtwayland-devel json-devel gpu-screen-recorder
 ```
 
 ### BUILD LUA 5.5 (Obselete when Fedora 45 or switch to Arch)

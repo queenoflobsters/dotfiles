@@ -45,3 +45,14 @@ if hl.plugin.hyprexpo ~= nil then
     },
 })
 end
+
+if hl.plugin.hyprcapture ~= nil then
+  hl.config({
+    plugin = {
+      hyprcapture = {
+        record_codec = "av1", -- or "av1_vaapi"
+        record_countdown_seconds = 4,
+      }
+    }
+  })
+end
