@@ -28,7 +28,10 @@ hl.bind(MainMod .. "X", hl.dsp.exec_cmd(Ipc .. "panel-toggle control-center"))
 hl.bind(MainMod .. "N", hl.dsp.exec_cmd(Ipc .. "panel-toggle control-center notifications"))
 hl.bind(MainMod .. "Space", hl.dsp.exec_cmd(Ipc .. "panel-toggle launcher"))
 hl.bind(MainMod .. Shift .. "T", hl.dsp.exec_cmd(Ipc .. "panel-toggle noctalia/timer:panel"))
-hl.bind(MainMod .. Shift .. "Z", hl.dsp.exec_cmd(Ipc .. "panel-toggle noctalia/wallhaven:panel"))
+hl.bind(MainMod .. Shift .. "Z", hl.dsp.exec_cmd(Ipc .. "panel-toggle noctalia/wallpaper_depth:manager"))
+
+-- Hyprexpo
+hl.bind(MainMod .. "Tab", function() hl.plugin.hyprexpo.expo("toggle") end)
 
 -- Send a graceful request to close the window
 hl.bind(MainMod .. "C", hl.dsp.window.close())
@@ -115,7 +118,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"
 
 -- Requires playerctl
 hl.bind(MainMod .. Shift .. "bracketleft", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
-hl.bind(MainMod .. "", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind(MainMod .. "P", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind(MainMod .. Shift .. "bracketright", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })

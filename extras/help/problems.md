@@ -28,6 +28,7 @@ hyprwire-devel readline-devel tomlplusplus-devel meson glibmm2.4-devel
 ```
 
 ### BUILD LUA 5.5 (Obselete when Fedora 45 or switch to Arch)
+**DON'T DO THAT IT IS BROKEN**\
 Build Lua5.5 : (God I hope it goes into the packages soon enough because this is painful)
 ```bash
 # Build
@@ -62,4 +63,12 @@ sudo ln -sf /usr/share/pkgconfig/lua-5.5.pc /usr/share/pkgconfig/lua55.pc
 
 ```
 
+### Build Lua5.5 from fedora
+```bash
+sudo dnf install rpm-build rpmdevtools
+# Find the Lua .src.rpm from the Fedora Koji Build System and rebuild it:
+# https://koji.fedoraproject.org/koji/packageinfo?packageID=129
+rpmbuild --rebuild lua-5.5.*.fc45.src.rpm
+sudo dnf install ~/rpmbuild/RPMS/x86_64/<corresponding>
+```
 

@@ -1,7 +1,6 @@
 [plugins]
 enabled = [
   "noctalia/timer",
-  "noctalia/wallhaven",
   "noctalia/wallpaper_depth",
 ]
 auto_update = "all"
