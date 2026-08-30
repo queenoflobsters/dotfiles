@@ -1,3 +1,8 @@
+MainMod = "SUPER + " -- Sets "Windows" key as main modifier
+Shift = "SHIFT + "
+Ctrl = "CTRL + "
+Alt = "ALT +"
+
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 function get_workspace(i)
   local ws = hl.get_active_workspace()
@@ -25,6 +30,7 @@ hl.bind(MainMod .. "N", hl.dsp.exec_cmd(Ipc .. "panel-toggle control-center noti
 hl.bind(MainMod .. "Space", hl.dsp.exec_cmd(Ipc .. "panel-toggle launcher"))
 hl.bind(MainMod .. Shift .. "T", hl.dsp.exec_cmd(Ipc .. "panel-toggle noctalia/timer:panel"))
 hl.bind(MainMod .. Shift .. "Z", hl.dsp.exec_cmd(Ipc .. "panel-toggle noctalia/wallpaper_depth:manager"))
+hl.bind(Alt .. "Tab", hl.dsp.exec_cmd(Ipc .. "window-switcher"))
 hl.bind(MainMod .. "Tab", function() hl.plugin.hyprexpo.expo("toggle") end)
 
 if hl.plugin.hyprexpo ~= nil then
@@ -101,20 +107,20 @@ hl.bind(MainMod .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(MainMod .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind(MainMod .. "bracketleft", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+hl.bind(MainMod .. "bracketleft", hl.dsp.exec_cmd(Ipc .. "volume-down 5"),
   { locked = true, repeating = true })
-hl.bind(MainMod .. "bracketright", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+hl.bind(MainMod .. "bracketright", hl.dsp.exec_cmd(Ipc .. "volume-up 5"),
   { locked = true, repeating = true })
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(Ipc .. "volume-up 5"),
   { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(Ipc .. "volume-down 5"),
   { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(Ipc .. "volume-mute"),
   { locked = true, repeating = true })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
   { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(Ipc .. "brightness-up * 5%"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(Ipc .. "brightness-down * 5%"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind(MainMod .. Shift .. "bracketleft", hl.dsp.exec_cmd("playerctl previous"), { locked = true })

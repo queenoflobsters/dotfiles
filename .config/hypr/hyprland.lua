@@ -13,9 +13,6 @@
 Terminal    = "ghostty"
 FileManager = "dolphin"
 Browser     = "librewolf"
-MainMod = "SUPER + " -- Sets "Windows" key as main modifier
-Shift = "SHIFT + "
-Ctrl = "CTRL + "
 
 -- noctalia ipc
 Ipc = "noctalia msg "
