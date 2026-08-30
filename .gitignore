@@ -51,6 +51,7 @@
 # Hyprland Window Manager
 !.config/hypr
 !.config/hypr/*
+.config/hypr/noctalia.lua
 
 # Noctalia shell
 !.config/noctalia
