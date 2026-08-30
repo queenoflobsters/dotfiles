@@ -1,8 +1,5 @@
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 
-GAPS_IN = 7
-GAPS_OUT = 20
-ROUNDING = 10
 
 hl.config({
   general = {
@@ -53,31 +50,6 @@ hl.config({
   },
 })
 
-HasGaps = false
-function ToggleGaps()
-  HasGaps = not HasGaps
-  if HasGaps then
-    hl.config({
-      general = {
-        gaps_in = GAPS_IN,
-        gaps_out = GAPS_OUT
-      },
-      decoration = {
-        rounding = ROUNDING
-      }
-    })
-  else
-    hl.config({
-      general = {
-        gaps_in = 0,
-        gaps_out = 0
-      },
-      decoration = {
-        rounding = 0
-      }
-    })
-  end
-end
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })

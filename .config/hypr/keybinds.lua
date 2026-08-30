@@ -1,21 +1,12 @@
+require("utils")
+
 MainMod = "SUPER + " -- Sets "Windows" key as main modifier
 Shift = "SHIFT + "
 Ctrl = "CTRL + "
 Alt = "ALT +"
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-function get_workspace(i)
-  local ws = hl.get_active_workspace()
-  if ws.monitor.id == 0 then
-    return i
-  else
-    if i <= 5 then
-      return i + 5
-    else
-      return i - 5
-    end
-  end
-end
+
 
 -- Start applications
 hl.bind(MainMod .. "Return", hl.dsp.exec_cmd(Terminal))
@@ -44,7 +35,7 @@ hl.bind(MainMod .. "C", hl.dsp.window.close())
 hl.bind(MainMod .. Shift .. "C", hl.dsp.window.kill())
 
 -- Toggle Gaps
-hl.bind(MainMod .. Shift .. "G", ToggleGaps)
+hl.bind(MainMod .. Shift .. "G", ToggleGapsRounded)
 
 -- Toggle Window Bars IN PROGRESS... HOPEFULLY
 hl.bind(MainMod .. Ctrl .. "T", hl.dsp.window.tag({ tag = "has-bar" }))
@@ -82,11 +73,11 @@ hl.bind(MainMod .. Shift .. "L", hl.dsp.window.move({ direction = "right" }))
 for i = 1, 10 do
   local key = i % 10
   hl.bind(MainMod .. key, function()
-    local w = get_workspace(i)
+    local w = GetWorkspaces(i)
     hl.dispatch(hl.dsp.focus({ workspace = w }))
   end)
   hl.bind(MainMod .. Shift .. key, function()
-    local w = get_workspace(i)
+    local w = GetWorkspaces(i)
     hl.dispatch(hl.dsp.window.move({ workspace = w, follow = true }))
   end
   )
@@ -107,16 +98,11 @@ hl.bind(MainMod .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(MainMod .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind(MainMod .. "bracketleft", hl.dsp.exec_cmd(Ipc .. "volume-down 5"),
-  { locked = true, repeating = true })
-hl.bind(MainMod .. "bracketright", hl.dsp.exec_cmd(Ipc .. "volume-up 5"),
-  { locked = true, repeating = true })
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(Ipc .. "volume-up 5"),
-  { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(Ipc .. "volume-down 5"),
-  { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(Ipc .. "volume-mute"),
-  { locked = true, repeating = true })
+hl.bind(MainMod .. "bracketleft", hl.dsp.exec_cmd(Ipc .. "volume-down 5"), { locked = true, repeating = true })
+hl.bind(MainMod .. "bracketright", hl.dsp.exec_cmd(Ipc .. "volume-up 5"), { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(Ipc .. "volume-up 5"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(Ipc .. "volume-down 5"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(Ipc .. "volume-mute"), { locked = true, repeating = true })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
   { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(Ipc .. "brightness-up * 5%"), { locked = true, repeating = true })

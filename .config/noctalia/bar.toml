@@ -16,7 +16,6 @@ start = [
   "volume",
   "brightness",
   "battery",
-  "keyboard_layout",
   "media",
 ]
 
@@ -59,7 +58,7 @@ visualization = "graph"
 [bar.default.dead_zone.actions]
 left = "panel-toggle control-center"
 right = "panel-toggle session"
-middle = "settings-open"
+middle = "settings-toggle"
 scroll_up = "volume-up"
 scroll_down = "volume-down"
 back = "media previous"
