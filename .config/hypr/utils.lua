@@ -6,8 +6,6 @@ ROUNDING = 10
 SETTINGS_PATH = "/home/gaybe/.local/state/noctalia/settings.toml"
 
 ROUNDED_CONFIG = string.format([=[
-
-[bar.default]
 border = "primary"
 border_width = 1.0
 margin_edge = %d
@@ -16,6 +14,14 @@ padding = 16
 radius = 12
 thickness = 40
 ]=], GAPS_OUT_TOP, GAPS_OUT)
+
+ALL_BARS_ROUNDED_CONFIG = string.format( [=[
+    
+[bar.main]
+%s
+[bar.second]
+%s
+]=], ROUNDED_CONFIG, ROUNDED_CONFIG)
 
 DISABLE_WIDGETS_CONFIG = [=[
 
@@ -83,7 +89,7 @@ function ToggleGapsRounded()
   IsRounded = not IsRounded
 
   if IsRounded then
-    append_content(SETTINGS_PATH, ROUNDED_CONFIG)
+    append_content(SETTINGS_PATH, ALL_BARS_ROUNDED_CONFIG)
     hl.config({
       general = {
         gaps_in = GAPS_IN,
@@ -94,7 +100,7 @@ function ToggleGapsRounded()
       }
     })
   else
-    remove_content( SETTINGS_PATH, ROUNDED_CONFIG)
+    remove_content( SETTINGS_PATH, ALL_BARS_ROUNDED_CONFIG)
     hl.config({
       general = {
         gaps_in = 0,

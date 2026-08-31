@@ -1,8 +1,36 @@
 [bar]
-order = ["main"]
+order = [ "main" , "second" ]
 
+[widget.workspaces]
+label_source = "name"
 
-[bar.default]
+[widget.lock_keys]
+hide_when_off = true
+
+[widget.network]
+show_label = false
+
+[widget.spacer]
+length = 32
+
+[widget.cpu]
+visualization = "graph"
+
+[widget.network_tx]
+visualization = "graph"
+
+[widget.network_rx]
+visualization = "graph"
+
+[widget.clock]
+color = "primary"
+font_weight = 700
+
+[widget.date]
+color = "primary"
+font_weight = 700
+
+[bar.main]
 radius = 0.0
 margin_ends = 0.0
 widget_spacing = 15
@@ -12,6 +40,7 @@ start = [
   "spacer",
   "notifications",
   "clipboard",
+  "network",
   "bluetooth",
   "volume",
   "brightness",
@@ -37,25 +66,8 @@ end    = [
   "session"
 ]
 
-[widget.workspaces]
-label_source = "name"
 
-[widget.lock_keys]
-hide_when_off = true
-
-[widget.spacer]
-length = 32
-
-[widget.cpu]
-visualization = "graph"
-
-[widget.network_tx]
-visualization = "graph"
-
-[widget.network_rx]
-visualization = "graph"
-
-[bar.default.dead_zone.actions]
+[bar.main.dead_zone.actions]
 left = "panel-toggle control-center"
 right = "panel-toggle session"
 middle = "settings-toggle"
@@ -64,6 +76,48 @@ scroll_down = "volume-down"
 back = "media previous"
 forward = "media next"
 
-[bar.default.monitor.dp2]
+[bar.main.monitor.dp2]
 match = "DP-2"
+enabled = false
+
+[bar.second]
+radius = 0.0
+margin_ends = 0.0
+widget_spacing = 15
+
+start = [
+  "date",
+  "clock",
+  "lock_keys",
+  "volume",
+  "brightness",
+  "battery",
+  "media",
+]
+
+center = [
+]
+
+end    = [
+  "tray",
+  "cpu",
+  "temp",
+  "ram",
+  "network_tx",
+  "network_rx",
+  "power_profile",
+  "session"
+]
+
+[bar.second.dead_zone.actions]
+left = "panel-toggle control-center"
+right = "panel-toggle session"
+middle = "settings-toggle"
+scroll_up = "volume-up"
+scroll_down = "volume-down"
+back = "media previous"
+forward = "media next"
+
+[bar.second.monitor.dp1]
+match = "DP-1"
 enabled = false
