@@ -2,6 +2,7 @@
 enabled = true
 fill_mode = "crop"
 directory = "/home/gaybe/extras/wallpapers/horizontal"
+default = "/home/gaybe/extras/wallpapers/horizontal/fuchsia/452.jpg"
 per_monitor_directories = true
 transition = ["fade", "wipe", "disc", "stripes", "zoom", "honeycomb"]
 transition_on_startup = true
@@ -15,13 +16,14 @@ transition_on_startup = true
 [wallpaper.monitor.DP-2]
 enabled = true
 directory = "/home/gaybe/extras/wallpapers/vertical"
+default = "/home/gaybe/extras/wallpapers/vertical/city/9811.jpg"
 
 
 
 [theme]
 mode = "dark"
 source = "builtin"
-builtin = "Kanagawa"
+builtin = "Rosé Pine"
 wallpaper_scheme = "m3-content"
 
 [theme.templates]
