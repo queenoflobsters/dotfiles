@@ -6,5 +6,6 @@ files = [
   "./appearance.toml",
   "./desktop_widgets.toml",
   "./services.toml",
+  "./lockscreen.toml"
 ]
 

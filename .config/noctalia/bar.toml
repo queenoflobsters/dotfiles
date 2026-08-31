@@ -50,7 +50,6 @@ start = [
 
 center = [
   "date",
-  "spacer",
   "clock",
   "lock_keys",
 ]
