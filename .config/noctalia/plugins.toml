@@ -4,3 +4,6 @@ enabled = [
   "noctalia/wallpaper_depth",
 ]
 auto_update = "all"
+
+[plugin_settings."noctalia/wallpaper_depth"]
+auto_generate = false
