@@ -88,7 +88,6 @@ widget_spacing = 15
 start = [
   "date",
   "clock",
-  "lock_keys",
   "volume",
   "brightness",
   "battery",
@@ -99,7 +98,6 @@ center = [
 ]
 
 end    = [
-  "tray",
   "cpu",
   "temp",
   "ram",
