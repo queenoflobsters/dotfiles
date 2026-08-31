@@ -4,6 +4,7 @@ GAPS_OUT_TOP = 14
 ROUNDING = 10
 
 ADDITIONAL_CONFIG = string.format([=[
+
 [bar.default]
 border = "primary"
 border_width = 1.0
@@ -49,7 +50,7 @@ local function remove_content(filename, target_str)
     local content, err = read_file(filename)
     if not content then return false, err end
 
-    -- Plain string search & remove (safe against regex magic characters)
+    -- Plain string search & remove
     local parts = {}
     local last_pos = 1
 
