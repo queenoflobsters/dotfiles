@@ -2,7 +2,13 @@
 
 ### Dependencies
 ```
-aquamarine-devel glslang-devel hyprcursor-devel hyprutils-devel hyprgraphics-devel libinput-devel muParser-devel libeis-devel re2-devel hyprwayland-scanner-devel xcb-util-wm-devel xcb-util-errors-devel hyprwire-devel readline-devel tomlplusplus-devel meson glibmm2.4-devel qt6-qtsvg-devel layer-shell-qt-devel qt6-qtwayland-devel json-devel gpu-screen-recorder hyprpolkitagent xcb-util-cursor
+aquamarine-devel glslang-devel hyprcursor-devel hyprutils-devel hyprgraphics-devel libinput-devel muParser-devel libeis-devel re2-devel hyprwayland-scanner-devel xcb-util-wm-devel xcb-util-errors-devel hyprwire-devel readline-devel tomlplusplus-devel meson glibmm2.4-devel qt6-qtsvg-devel layer-shell-qt-devel qt6-qtwayland-devel json-devel gpu-screen-recorder hyprpolkitagent xcb-util-cursor liberation-fonts-all
+```
+
+### Fix font problem
+```bash
+sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+fc-cache -fv
 ```
 
 ### Failed unit started : dbus-_3a1.2-com.redhat.imsettings@0.service

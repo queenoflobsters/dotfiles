@@ -3,7 +3,9 @@ GAPS_OUT = 20
 GAPS_OUT_TOP = 14
 ROUNDING = 10
 
-ADDITIONAL_CONFIG = string.format([=[
+SETTINGS_PATH = "/home/gaybe/.local/state/noctalia/settings.toml"
+
+ROUNDED_CONFIG = string.format([=[
 
 [bar.default]
 border = "primary"
@@ -14,6 +16,12 @@ padding = 16
 radius = 12
 thickness = 40
 ]=], GAPS_OUT_TOP, GAPS_OUT)
+
+DISABLE_WIDGETS_CONFIG = [=[
+
+[desktop_widgets]
+enabled = false
+]=]
 
 local function read_file(filename)
     local file, err = io.open(filename, "r")
@@ -75,7 +83,7 @@ function ToggleGapsRounded()
   IsRounded = not IsRounded
 
   if IsRounded then
-    append_content( "/home/gaybe/.local/state/noctalia/settings.toml", ADDITIONAL_CONFIG)
+    append_content(SETTINGS_PATH, ROUNDED_CONFIG)
     hl.config({
       general = {
         gaps_in = GAPS_IN,
@@ -86,7 +94,7 @@ function ToggleGapsRounded()
       }
     })
   else
-    remove_content( "/home/gaybe/.local/state/noctalia/settings.toml", ADDITIONAL_CONFIG)
+    remove_content( SETTINGS_PATH, ROUNDED_CONFIG)
     hl.config({
       general = {
         gaps_in = 0,
@@ -96,6 +104,17 @@ function ToggleGapsRounded()
         rounding = 0
       }
     })
+  end
+end
+
+HasDesktopWidgets = true
+
+function ToggleDesktopWidgets()
+  HasDesktopWidgets = not HasDesktopWidgets
+  if HasDesktopWidgets then
+    append_content(SETTINGS_PATH, DISABLE_WIDGETS_CONFIG)
+  else
+    remove_content(SETTINGS_PATH, DISABLE_WIDGETS_CONFIG)
   end
 end
 

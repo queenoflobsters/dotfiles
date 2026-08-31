@@ -34,8 +34,9 @@ hl.bind(MainMod .. "C", hl.dsp.window.close())
 -- Kill the process owning the window with a SIGKILL
 hl.bind(MainMod .. Shift .. "C", hl.dsp.window.kill())
 
--- Toggle Gaps
+-- Noctalia active config modifying
 hl.bind(MainMod .. Shift .. "G", ToggleGapsRounded)
+hl.bind(MainMod .. Shift .. "W", ToggleDesktopWidgets)
 
 -- Toggle Window Bars IN PROGRESS... HOPEFULLY
 hl.bind(MainMod .. Ctrl .. "T", hl.dsp.window.tag({ tag = "has-bar" }))

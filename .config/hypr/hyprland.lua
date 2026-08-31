@@ -24,7 +24,6 @@ Ipc = "noctalia msg "
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
 hl.on("hyprland.start", function () 
-   hl.exec_cmd("rm ~/.local/state/noctalia/settings.toml")
    hl.exec_cmd("systemctl --user start hyprpolkitagent") -- Authentification
    hl.exec_cmd("noctalia")
    hl.exec_cmd("hyprpm reload")
@@ -38,6 +37,7 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("GDK_SCALE", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 
