@@ -70,5 +70,4 @@
 !.config/fish/*
 
 # Starship, custom command prompt
-!.config/starship
-!.config/starship/*
+!.config/starship.toml

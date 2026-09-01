@@ -1,9 +1,23 @@
 add_newline = false
+palette = "stuff"
 
 # floating pill layout
 format = """
-$directory$git_branch$cmd_duration
+$directory$git_branch$git_metrics$cmd_duration
 $character"""
+
+
+[palettes.stuff]
+# pill backgrounds. dark muted shades that sit next to Noir
+dir_bg = "#23252E"   # Deep Slate
+git_bg = "#1A272D"   # Dark Aegean Blue/Grey
+time_bg = "#2B1E22"  # Shadowy Tyrian Purple/Wine
+
+# foregrounds. bright accents that pop on terminal blacks
+dir_fg = "#ECA75B"   # Olympian Gold / Bronze
+git_fg = "#70C2A3"   # Oxidized Patina Green
+time_fg = "#E27B75"  # Terracotta / Clay red
+crimson = "#E64553"  # error red
 
 
 [directory]
