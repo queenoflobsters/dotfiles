@@ -113,11 +113,11 @@ function ToggleGapsRounded()
   end
 end
 
-HasDesktopWidgets = true
+HasRemoveDesktopWidget = false
 
 function ToggleDesktopWidgets()
-  HasDesktopWidgets = not HasDesktopWidgets
-  if HasDesktopWidgets then
+  HasRemoveDesktopWidget = not HasRemoveDesktopWidget
+  if HasRemoveDesktopWidget then
     append_content(SETTINGS_PATH, DISABLE_WIDGETS_CONFIG)
   else
     remove_content(SETTINGS_PATH, DISABLE_WIDGETS_CONFIG)
