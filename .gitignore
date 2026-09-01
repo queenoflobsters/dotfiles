@@ -64,3 +64,11 @@
 # Remove nwg-displays auto generated config
 .config/hypr/monitors.conf
 .config/hypr/monitors.lua
+
+# The friendly interactive shell
+!.config/fish
+!.config/fish/*
+
+# Starship, custom command prompt
+!.config/starship
+!.config/starship/*

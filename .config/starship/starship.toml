@@ -1,0 +1,34 @@
+add_newline = false
+
+# floating pill layout
+format = """
+$directory$git_branch$cmd_duration
+$character"""
+
+
+[directory]
+style = "fg:dir_fg bg:dir_bg bold"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " 󰌾"
+read_only_style = "fg:crimson bg:dir_bg bold"
+# Nerd Font half-circles = the pill caps
+format = "[](fg:dir_bg)[󰉋 $path ]($style)[$read_only]($read_only_style)[](fg:dir_bg) "
+
+[git_branch]
+symbol = "󰊢 "
+style = "fg:git_fg bg:git_bg bold"
+format = "[](fg:git_bg)[$symbol$branch ]($style)[](fg:git_bg) "
+
+[cmd_duration]
+min_time = 500
+style = "fg:time_fg bg:time_bg bold"
+format = "[](fg:time_bg)[󰔚 $duration ]($style)[](fg:time_bg) "
+
+[character]
+# lambda, not a chevron
+success_symbol = "[λ ](bold fg:dir_fg)"
+error_symbol = "[λ ](bold fg:crimson)"
+
+[package]
+disabled = true
