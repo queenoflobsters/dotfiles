@@ -15,19 +15,15 @@ radius = 12
 thickness = 40
 ]=], GAPS_OUT_TOP, GAPS_OUT)
 
-ALL_BARS_ROUNDED_CONFIG = string.format( [=[
-    
+ALL_BARS_ROUNDED_CONFIG = string.format( [=[  
 [bar.main]
 %s
 [bar.second]
-%s
-]=], ROUNDED_CONFIG, ROUNDED_CONFIG)
+%s]=], ROUNDED_CONFIG, ROUNDED_CONFIG)
 
 DISABLE_WIDGETS_CONFIG = [=[
-
 [desktop_widgets]
-enabled = false
-]=]
+enabled = false]=]
 
 local function read_file(filename)
     local file, err = io.open(filename, "r")
