@@ -30,7 +30,7 @@ builtin_ids = [
   "helix",
   "hyprland",
   "kcolorscheme",
-  "starship",
+  # "starship", # It's messing with the git
   "kitty",
   "qt"
 ]
