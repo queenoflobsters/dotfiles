@@ -65,3 +65,6 @@ if status is-interactive
         alias lta 'lt -a'
     end
 end
+
+# opencode
+fish_add_path /home/gaybe/.opencode/bin
