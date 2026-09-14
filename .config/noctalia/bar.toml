@@ -83,6 +83,7 @@ enabled = false
 radius = 0.0
 margin_ends = 0.0
 widget_spacing = 15
+enabled = false
 
 start = [
   "date",
@@ -118,3 +119,7 @@ forward = "media next"
 [bar.second.monitor.dp1]
 match = "DP-1"
 enabled = false
+
+[bar.second.monitor.dp2]
+match = "DP-2"
+enabled = true
