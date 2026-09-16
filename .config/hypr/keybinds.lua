@@ -34,6 +34,9 @@ hl.bind(MainMod .. "C", hl.dsp.window.close())
 -- Kill the process owning the window with a SIGKILL
 hl.bind(MainMod .. Shift .. "C", hl.dsp.window.kill())
 
+-- Put the system to sleep
+hl.bind(MainMod .. Shift .. "D", hl.dsp.exec_cmd("systemctl suspend"))
+
 -- Noctalia active config modifying
 hl.bind(MainMod .. Shift .. "G", ToggleGapsRounded)
 hl.bind(MainMod .. Shift .. "W", ToggleDesktopWidgets)
