@@ -15,6 +15,7 @@ default = "/home/gaybe/extras/wallpapers/vertical/city/9811.jpg"
 
 [theme]
 mode = "dark"
+shell_mode = "dark"
 source = "builtin"
 builtin = "Rosé Pine"
 wallpaper_scheme = "m3-content"

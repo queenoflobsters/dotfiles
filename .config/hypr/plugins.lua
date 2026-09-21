@@ -1,4 +1,4 @@
-local colors = require("noctalia").colors
+-- local colors = require("noctalia").colors
 
 
 if hl.plugin.hyprbars ~= nil then
