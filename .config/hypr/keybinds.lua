@@ -77,12 +77,12 @@ hl.bind(MainMod .. Shift .. "L", hl.dsp.window.move({ direction = "right" }))
 for i = 1, 10 do
   local key = i % 10
   hl.bind(MainMod .. key, function()
-    local w = GetWorkspaces(i)
-    hl.dispatch(hl.dsp.focus({ workspace = w }))
+    -- local w = GetWorkspaces(i)
+    hl.dispatch(hl.dsp.focus({ workspace = i }))
   end)
   hl.bind(MainMod .. Shift .. key, function()
-    local w = GetWorkspaces(i)
-    hl.dispatch(hl.dsp.window.move({ workspace = w, follow = true }))
+    -- local w = GetWorkspaces(i)
+    hl.dispatch(hl.dsp.window.move({ workspace = i, follow = true }))
   end
   )
 end
