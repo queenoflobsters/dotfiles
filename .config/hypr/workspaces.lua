@@ -15,6 +15,6 @@ hl.workspace_rule({ workspace = "9", persistent = true, monitor = "DP-2"})
 hl.workspace_rule({ workspace = "10", persistent = true, monitor = "DP-2"})
 
 -- Special
-hl.workspace_rule({workspace = "special:Music", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT, on_created_empty = "flatpak run dev.aunetx.deezer"})
+hl.workspace_rule({workspace = "special:Music", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT, on_created_empty = "flatpak run com.spotify.Client"})
 hl.workspace_rule({workspace = "special:Sysmon", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT, on_created_empty = "plasma-systemmonitor"})
 hl.workspace_rule({workspace = "special:Explorer", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT, on_created_empty = "dolphin"})
