@@ -64,6 +64,9 @@ if status is-interactive
         alias lt 'eza --tree --level=2 --long --icons --git'
         alias lta 'lt -a'
     end
+
+    # fuck alias
+    thefuck --alias | source
 end
 
 # opencode
