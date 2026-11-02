@@ -36,37 +36,35 @@ if status is-interactive
     set -g fish_color_autosuggestion 949699
 
     # prompt.
-    if command -v starship >/dev/null 2>&1
+    if type -q starship >/dev/null 2>&1
         starship init fish | source
     end
 
     # Zioxide
-    if command -v zoxide >/dev/null 2>&1
+    if type -q zoxide >/dev/null 2>&1
         zoxide init fish --cmd cd | source
     end
 
     # fzf walks the tree via fd when present.
-    if command -v fd >/dev/null 2>&1
+    if type -q fd >/dev/null 2>&1
         set -gx FZF_DEFAULT_COMMAND 'fd --hidden --follow --exclude .git'
         set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
         set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git'
     end
 
     # fzf keys: Ctrl-R history, Ctrl-T files, Alt-C cd.
-    if command -v fzf >/dev/null 2>&1
+    if type -q fzf >/dev/null 2>&1
         fzf --fish | source
     end
 
     # eza listings.
-    if command -v eza >/dev/null 2>&1
+    if type -q eza >/dev/null 2>&1
         alias ls 'eza -lh --group-directories-first --icons=auto'
         alias lsa 'ls -a'
         alias lt 'eza --tree --level=2 --long --icons --git'
         alias lta 'lt -a'
     end
 
-    # fuck alias
-    thefuck --alias | source
 end
 
 # opencode
