@@ -38,6 +38,7 @@
 !.config/helix
 !.config/helix/*
 .config/helix/themes/noctalia.toml
+.config/helix/runtime
 
 # Clangd Compiler
 !.config/clangd
