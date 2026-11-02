@@ -10,7 +10,7 @@
 -- ░▄▀▒░█▒░░▄▀▄░██▄▒▄▀▄░█▒░░▄▀▀
 -- ░▀▄█▒█▄▄░▀▄▀▒█▄█░█▀█▒█▄▄▒▄██
 
-Terminal    = "ghostty"
+Terminal    = "foot"
 FileManager = "dolphin"
 Browser     = "librewolf"
 
