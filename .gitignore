@@ -72,3 +72,8 @@
 
 # Starship, custom command prompt
 !.config/starship.toml
+
+# Foot terminal
+!.config/foot
+!.config/foot/*
+.config/foot/themes
