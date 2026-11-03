@@ -28,6 +28,7 @@ builtin_ids = [
   "gtk3",
   "gtk4",
   "ghostty",
+  "foot",
   "helix",
   "hyprland",
   "kcolorscheme",
