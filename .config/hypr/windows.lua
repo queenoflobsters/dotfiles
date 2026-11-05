@@ -47,3 +47,11 @@ hl.window_rule({
     no_blur = true,
     no_focus = true,
 })
+
+
+-- Ensure newly opened windows gets focus immediately on special workspaces
+hl.on("window.open", function(win)
+    if win.workspace and win.workspace.name and win.workspace.name:find("^special:") then
+        hl.dispatch(hl.dsp.focus({ window = win }))
+    end
+end)

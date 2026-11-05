@@ -5,34 +5,30 @@ SPECIAL_GAPS_OUT = 40
 
 local function configure_workspaces()
     local monitors = hl.get_monitors()
-    if #monitors == 0 then return end
+    if not monitors or #monitors <= 1 then return end
 
-    -- Sort monitors by their X position
+    -- 1. Sort physically from left to right (X position)
     table.sort(monitors, function(a, b) 
         return (a.x or 0) < (b.x or 0) 
     end)
 
-    local main_monitor = monitors[1].name
-    local second_monitor = monitors[2] and monitors[2].name or main_monitor
-
-    -- Assign Workspaces 1-5 to "main"
-    for i = 1, 5 do
-        hl.workspace_rule({
-            workspace = tostring(i),
-            persistent = true,
-            monitor = main_monitor,
-            default = (i == 1),
-        })
+    -- 2. Reorder according to your preference
+    if #monitors >= 3 then
+        monitors[1], monitors[2], monitors[3] = monitors[2], monitors[3], monitors[1]
     end
 
-    -- Assign Workspaces 6-10 to "second"
-    for i = 6, 10 do
-        hl.workspace_rule({
-            workspace = tostring(i),
-            persistent = true,
-            monitor = second_monitor,
-            default = (i == 6),
-        })
+    -- 3. Assign workspace to monitor
+    workspace_id = 1
+    for _, monitor in ipairs(monitors) do
+        for i = 1, 5 do
+            hl.workspace_rule({
+                workspace = tostring(workspace_id),
+                persistent = true,
+                monitor = monitor.name,
+                default = (workspace_id - 1) % 5 == 0
+            })
+            workspace_id = workspace_id + 1
+        end
     end
 end
 
@@ -49,15 +45,23 @@ hl.on("config.reloaded", configure_workspaces)
 hl.workspace_rule({workspace = "special:Music", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT})
 hl.workspace_rule({workspace = "special:Sysmon", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT})
 hl.workspace_rule({workspace = "special:Explorer", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT})
+hl.workspace_rule({workspace = "special:Torrent", gaps_in = SPECIAL_GAPS_IN, gaps_out = SPECIAL_GAPS_OUT})
+
+
 
 hl.on("workspace.created", function(ws)
     if not ws.is_empty then return end
 
-    if ws.name == "special:Music" then
-      hl.exec_cmd("flatpak run com.spotify.Client")
-    elseif ws.name == "special:Sysmon" then
-      hl.exec_cmd("plasma-systemmonitor")
-    elseif ws.name == "special:Explorer" then
-      hl.exec_cmd("dolphin")
+    local special_apps = {
+        ["special:Music"] = "flatpak run com.spotify.Client",
+        ["special:Sysmon"] = "plasma-systemmonitor",
+        ["special:Explorer"] = "dolphin",
+        ["special:Torrent"] = "qbittorrent",
+    }
+
+    local cmd = special_apps[ws.name]
+    if cmd then
+        hl.exec_cmd(cmd, { workspace = ws.name .. " silent" })
     end
+
 end)

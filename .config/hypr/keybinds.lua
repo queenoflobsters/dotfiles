@@ -91,6 +91,7 @@ end
 hl.bind(MainMod .. "M", hl.dsp.workspace.toggle_special("Music"))
 hl.bind(MainMod .. "comma", hl.dsp.workspace.toggle_special("Sysmon"))
 hl.bind(MainMod .. "period", hl.dsp.workspace.toggle_special("Explorer"))
+hl.bind(MainMod .. "slash", hl.dsp.workspace.toggle_special("Torrent"))
 
 -- Maximize - Window takes up the entire working space, keeping the margins.
 hl.bind(MainMod .. "G", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
