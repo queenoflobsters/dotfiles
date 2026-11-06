@@ -1,15 +1,13 @@
--- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
 SPECIAL_GAPS_IN = 10
 SPECIAL_GAPS_OUT = 40
 
 local function configure_workspaces()
     local monitors = hl.get_monitors()
-    if not monitors or #monitors <= 1 then return end
+    if not monitors then return end
 
     -- 1. Sort physically from left to right (X position)
-    table.sort(monitors, function(a, b) 
-        return (a.x or 0) < (b.x or 0) 
+    table.sort(monitors, function(a, b)
+        return (a.x or 0) < (b.x or 0)
     end)
 
     -- 2. Reorder according to your preference
@@ -18,7 +16,7 @@ local function configure_workspaces()
     end
 
     -- 3. Assign workspace to monitor
-    workspace_id = 1
+    local workspace_id = 1
     for _, monitor in ipairs(monitors) do
         for i = 1, 5 do
             hl.workspace_rule({
@@ -63,5 +61,4 @@ hl.on("workspace.created", function(ws)
     if cmd then
         hl.exec_cmd(cmd, { workspace = ws.name .. " silent" })
     end
-
 end)
