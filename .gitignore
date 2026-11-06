@@ -40,6 +40,12 @@
 .config/helix/themes/noctalia.toml
 .config/helix/runtime
 
+# Mitos editor
+!.config/mitos
+!.config/mitos/*
+.config/mitos/themes/noctalia.toml
+.config/mitos/runtime
+
 # Clangd Compiler
 !.config/clangd
 !.config/clangd/*

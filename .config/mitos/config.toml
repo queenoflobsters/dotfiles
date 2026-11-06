@@ -1,0 +1,57 @@
+theme = "dark-synthwave"
+
+[editor]
+line-number = "relative"
+idle-timeout = 0
+indent-guides.render = true
+
+[editor.files.auto-save]
+focus-lost = true
+after-delay.enable = true
+after-delay.timeout = 300
+
+[editor.cursor.shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.completion]
+auto-trigger = true
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode","spacer", "branch", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["workspace-diagnostics", "register", "primary-selection-length", "selections",  "position", "file-encoding"]
+mode.normal = "normal"
+mode.insert = "insert"
+mode.select = "select"
+mode.color = true
+
+[editor.lsp]
+
+[editor.lsp.signature-help]
+show-documentation = false
+
+[editor.lsp.inlay-hints]
+enable = true
+
+[editor.mouse]
+enable = true
+middle-click-paste = false
+
+[editor.cursor]
+highlight-line = true
+
+[editor.diagnostics.inline]
+cursor-line = "hint"
+
+[editor.diagnostics.end-of-line]
+severity = "hint"
+
+[editor.bufferline]
+show = "always"
+
+[terminal]
+true-color = true
