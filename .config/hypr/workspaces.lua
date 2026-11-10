@@ -54,7 +54,7 @@ hl.on("workspace.created", function(ws)
         ["special:Music"] = "flatpak run com.spotify.Client",
         ["special:Sysmon"] = "plasma-systemmonitor",
         ["special:Explorer"] = "dolphin",
-        ["special:Torrent"] = "~/extras/torrent/run_torrent_stack.sh",
+        ["special:Torrent"] = "fish -c mischievous",
     }
 
     local cmd = special_apps[ws.name]

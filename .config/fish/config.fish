@@ -8,6 +8,14 @@ if test -d $HOME/.cargo/bin
     fish_add_path $HOME/.cargo/bin
 end
 
+if test -d $HOME/.opencode
+    fish_add_path /home/gaybe/.opencode/bin
+end
+
+if test -d /opt/Jackett
+    fish_add_path /opt/Jackett
+end
+
 # point `go install` and `cargo install` at ~/.local/bin, and keep an existing
 # editor choice.
 set -gx GOBIN $HOME/.local/bin
@@ -67,5 +75,3 @@ if status is-interactive
 
 end
 
-# opencode
-fish_add_path /home/gaybe/.opencode/bin
