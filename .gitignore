@@ -83,3 +83,7 @@
 !.config/foot
 !.config/foot/*
 .config/foot/themes
+
+# Mullrun configuration
+!.config/mullrun
+!.config/mullrun/*
