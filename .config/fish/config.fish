@@ -75,3 +75,5 @@ if status is-interactive
 
 end
 
+
+fish_add_path /home/gaybe/.spicetify

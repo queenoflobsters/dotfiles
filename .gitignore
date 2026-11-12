@@ -74,7 +74,9 @@
 
 # The friendly interactive shell
 !.config/fish
-!.config/fish/*
+!.config/fish/config.fish
+!.config/fish/functions
+!.config/fish/functions/*
 
 # Starship, custom command prompt
 !.config/starship.toml
