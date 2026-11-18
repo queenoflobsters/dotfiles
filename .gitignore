@@ -89,3 +89,6 @@
 # Mullrun configuration
 !.config/mullrun
 !.config/mullrun/*
+
+# Monitor Scaling
+!.Xressources
