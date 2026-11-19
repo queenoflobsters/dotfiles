@@ -91,4 +91,5 @@
 !.config/mullrun/*
 
 # Monitor Scaling
-!.Xressources
+!.config/xsettingsd
+!.config/xsettingsd/*
