@@ -37,8 +37,7 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 hl.on("hyprland.start", function () 
    hl.exec_cmd("dbus-update-activation-environment --systemd --all")
-   -- hl.exec_cmd("xsettingsd -c \"$HOME/.config/hypr/xsettingsd-hyprland.conf\"")
-   hl.exec_cmd("xsettingsd")
+   hl.exec_cmd("xsettingsd -c \"$HOME/.config/xsettingsd/xsettingsd-hyprland.conf\"")
    hl.exec_cmd("systemctl --user start hyprpolkitagent") -- Authentification
    hl.exec_cmd("noctalia")
    hl.exec_cmd("hyprpm reload")

@@ -93,3 +93,4 @@
 # Monitor Scaling
 !.config/xsettingsd
 !.config/xsettingsd/*
+.config/xsettingsd/xsettingsd.conf
